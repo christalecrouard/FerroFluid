@@ -8,14 +8,14 @@ from MagneticFieldValues import constant, mag1, mag2
 
 def main():
 
-    f = open('data_20.csv','w')
+    f = open('data_35.csv','w')
     writer = csv.writer(f)
 
     # write  header of the csv file
     header = ['centroidx','centroidy','height','angle','module','mag_field']
     writer.writerow(header)
 
-    files_dir = "./Gdefinite7/"
+    files_dir = "./misure2/"
     #list files
     directory = os.listdir(files_dir)
     for files in directory:
@@ -35,6 +35,7 @@ def getMagField(fullstring):
         
         if  str(ind1) in fullstring[3:5]:
             lin = mag1.index(ind1)
+            #print("indice 1", ind1)
         else :
             continue
     for ind2 in mag2:
